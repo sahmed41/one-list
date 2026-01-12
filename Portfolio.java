@@ -1,4 +1,5 @@
 public class Portfolio {
+    private int id;
     private String name;
     private String description;
 
@@ -8,7 +9,7 @@ public class Portfolio {
     }    
 
 
-    // Setters
+    // Setter
     public void setName(String name) {
         this.name = name;
     }
@@ -26,6 +27,13 @@ public class Portfolio {
     public String getDescription() {
         return description;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    /*
+     */
 
 
 }
