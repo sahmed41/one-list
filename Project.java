@@ -1,4 +1,5 @@
 public class Project {
+    private int id;
     private String name;
     private Portfolio portfolio;
 

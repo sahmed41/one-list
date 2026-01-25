@@ -9,6 +9,12 @@ public class Assembler {
     System.out.println(port1.getCreatedAt());
     System.out.println(port1.getUpdatedAt());
 
+    port1.setName("New Mastesr");
+    System.out.println(port1.getUpdatedAt());
+    port1.setDescription("New Description");
+    System.out.println(port1.getName());
+    System.out.println(port1.getDescription());
+
 
     
 

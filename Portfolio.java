@@ -20,16 +20,16 @@ public class Portfolio {
     // Setter
     public void setName(String name) {
         this.name = name;
+        this.updated_at = LocalDateTime.now();
         
     }
 
     public void setDescription(String description) {
         this.description = description;
+        this.updated_at = LocalDateTime.now();
     }
     
-    public void setUpdatedAt(LocalDateTime updated_at) {
-        this.updated_at = updated_at;
-    }
+    
     
 
 
