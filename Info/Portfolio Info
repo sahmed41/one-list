@@ -1,0 +1,105 @@
+A portfolio in this context should represent a high-level container for multiple projects, with metadata for ownership, status, and timeframes.
+​
+
+Core properties
+These cover identity, ownership, and lifecycle of a portfolio.
+​
+
+id: Unique identifier (e.g., Long id).
+​
+
+name: Human-readable portfolio name (e.g., “Marketing Q1 2026”).
+​
+
+description: Optional longer text describing goals and scope.
+​
+
+status: Enum like PLANNED, ACTIVE, ON_HOLD, COMPLETED, CANCELLED.
+​
+
+owner: Reference to a User or Account entity managing the portfolio.
+​
+
+startDate: Planned or actual start date.
+​
+
+endDate: Planned or target completion date.
+​
+
+progress: Computed percentage or health indicator (0–100 or enum).
+​
+
+projects: List<Project> or Set<Project> associated with this portfolio.
+​
+
+createdAt / updatedAt: Timestamps for auditing.
+​
+
+Optional but useful:
+
+tags: List of strings for categorization (e.g., “OKR-2026”, “Internal”).
+​
+
+priority: Enum or numeric (e.g., LOW, MEDIUM, HIGH, CRITICAL).
+​
+
+businessUnit / department: String or enum to group portfolios.
+​
+
+Domain methods (behavior)
+These methods encapsulate business logic around projects and status, rather than just getters/setters.
+​
+
+addProject(Project project)
+
+Adds a project to the portfolio and sets the portfolio reference in the project.
+​
+
+removeProject(Project project)
+
+Removes a project while enforcing rules (e.g., prevent removal if not archived).
+​
+
+getProjectById(Long projectId)
+
+Convenience lookup within the portfolio’s projects.
+​
+
+calculateProgress()
+
+Aggregates project progress (e.g., average of project progress weighted by task counts) and updates progress.
+​
+
+updateStatus(PortfolioStatus newStatus)
+
+Validates allowed transitions (e.g., cannot go from COMPLETED back to PLANNED without specific rules).
+​
+
+isActive() / isCompleted()
+
+Convenience checks based on status and dates.
+​
+
+getActiveProjects() / getArchivedProjects()
+
+Filters projects by their status inside this portfolio.
+​
+
+Service-level methods (in a PortfolioService)
+These are not on the entity itself, but in a service that uses repositories.
+​
+
+createPortfolio(CreatePortfolioRequest dto)
+
+updatePortfolio(Long id, UpdatePortfolioRequest dto)
+
+archivePortfolio(Long id) (soft delete or status change).
+​
+
+getPortfolioSummary(Long id) (includes counts of projects and tasks per status).
+​
+
+listPortfoliosWithFilters(owner, status, dateRange) for dashboards.
+​
+
+If you describe how you want to calculate portfolio progress (e.g., based on task statuses of all projects), the next step can define an enum and exact Java method signatures.
