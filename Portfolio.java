@@ -12,21 +12,17 @@ public class Portfolio {
     public Portfolio(String name, String description) {
         this.name = name;
         this.description = description;
-        this.created_at = LocalDateTime.now();
-        this.updated_at = LocalDateTime.now();
     }    
 
 
     // Setter
     public void setName(String name) {
         this.name = name;
-        this.updated_at = LocalDateTime.now();
         
     }
 
     public void setDescription(String description) {
         this.description = description;
-        this.updated_at = LocalDateTime.now();
     }
     
     

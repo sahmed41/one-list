@@ -24,27 +24,22 @@ public class Project {
     // Setters
     public void setName(String name) {
         this.name = name;
-        this.updated_at = LocalDateTime.now();
     }
 
     public void setPortfolio(Portfolio portfolio) {
         this.portfolio = portfolio;
-        this.updated_at = LocalDateTime.now();
     }
 
     public void setStarDate(LocalDate starDate) {
         this.starDate = starDate;
-        this.updated_at = LocalDateTime.now();
     }
 
     public void setTartgetEndDate(LocalDate targetEndDate) {
         this.targetEndDate = targetEndDate;
-        this.updated_at = LocalDateTime.now();
     }
 
     public void setActualEndDate(LocalDate actualEndDate) {
         this.actualEndDate = actualEndDate;
-        this.updated_at = LocalDateTime.now();
     }       
     
     // Getters
