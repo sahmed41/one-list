@@ -7,9 +7,9 @@ public class Project {
     private String name;
     private Portfolio portfolio;
 
-    private LocalDate starDate;
-    private LocalDate targetEndDate;
-    private LocalDate actualEndDate;
+    private LocalDate star_date;
+    private LocalDate target_end_date;
+    private LocalDate actual_end_date;
 
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
@@ -30,16 +30,16 @@ public class Project {
         this.portfolio = portfolio;
     }
 
-    public void setStarDate(LocalDate starDate) {
-        this.starDate = starDate;
+    public void setStarDate(LocalDate star_date) {
+        this.star_date = star_date;
     }
 
-    public void setTartgetEndDate(LocalDate targetEndDate) {
-        this.targetEndDate = targetEndDate;
+    public void setTartgetEndDate(LocalDate target_end_date) {
+        this.target_end_date = target_end_date;
     }
 
-    public void setActualEndDate(LocalDate actualEndDate) {
-        this.actualEndDate = actualEndDate;
+    public void setActualEndDate(LocalDate actual_end_date) {
+        this.actual_end_date = actual_end_date;
     }       
     
     // Getters
@@ -55,16 +55,16 @@ public class Project {
         return portfolio;
     }
 
-    public LocalDate getStarDate() {
-        return starDate;
+    public LocalDate getStar_date() {
+        return star_date;
     }
     
-    public LocalDate getTargetEndDate() {
-        return targetEndDate;
+    public LocalDate getTarget_end_date() {
+        return target_end_date;
     }
 
-    public LocalDate getActualEndDate() {
-        return actualEndDate;
+    public LocalDate getActual_endDate() {
+        return actual_end_date;
     }
 
     public LocalDateTime getCreatedAt() {
